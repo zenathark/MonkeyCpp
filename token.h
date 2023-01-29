@@ -1,10 +1,11 @@
 #ifndef TOKEN_H_
 #define TOKEN_H_
 
+#include <string>
 #include <string_view>
 
 constexpr std::string_view ILLEGAL = "Illegal";
-constexpr std::string_view EOF = "EOF";
+constexpr std::string_view END_OF_FILE = "EOF";
 
 // Identifiers + Literals
 constexpr std::string_view IDENTIFIER = "Identifier"; // add, x ,y, ...
@@ -44,5 +45,10 @@ constexpr std::string_view FALSE = "False";
 constexpr std::string_view IF = "If";
 constexpr std::string_view ELSE = "Else";
 constexpr std::string_view RETURN = "Return";
+
+struct Token {
+  std::string_view token_type;
+  std::string literal;
+};
 
 #endif // !TOKEN_H_
